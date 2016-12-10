@@ -1,0 +1,57 @@
+<div class ="jumbotron" align=center>
+    <h2>BMI Calculator</h2>
+
+    <form>
+        <div class="row">
+            <h3>Enter Your Weight</h3>
+            <div class=col-sm-4>
+                <div class="form-group">
+            <h5>Stone</h5>
+            <input [(ngModel)]="stone" name="stone" (keyup)=" StoneToKgs()" type="number" step="any" class="form-control" >
+            </div>
+            </div>
+            <div class=col-sm-4>
+                <div class="form-group">
+            <h5>Pounds</h5>
+            <input [(ngModel)]="pounds" name="pounds"(keyup)=" StoneAndPoundToKgs()" type="number" step="any" class="form-control" >
+            </div>
+            </div>
+            <div class=col-sm-4>
+                <div class="form-group">
+            <h5>or KGs</h5>
+            <input [(ngModel)]="orKgs" name="orKgs"(keyup)="orKgsToStoneAndPound()" type="number" step="any" class="form-control" >
+            </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <h3>Enter Your Height</h3>
+            <div class=col-sm-4>
+                <div class="form-group">
+            <h5>Feet</h5>
+            <input [(ngModel)]="feet" name="feet" (keyup)="feetToMeters()" type="number" step="any" class="form-control" >
+            </div>
+            </div>
+            <div class=col-sm-4>
+                <div class="form-group">
+            <h5>Inches</h5>
+            <input [(ngModel)]="inches" name="inches"(keyup)="feetAndInchesToMeters()" type="number" step="any" class="form-control" >
+            </div>
+            </div>
+            <div class=col-sm-4>
+                <div class="form-group">
+            <h5>or Meters</h5>
+            <input [(ngModel)]="orMeters" name="orMeters"(keyup)="orMetersTofeetAndInches()" type="number" step="any" class="form-control" >
+            </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary"  (click)="BMICalculation()">Calculate BMI</button>
+        <h6>Enter your weight either in stones/ pounds or kilograms and your height either in feet/ inches or meters</h6>
+        <div align=left>
+            <h4>Result:</h4>
+        </div>
+        <div id="result">
+            <p>Your BMI is {{bmi}}, this means that you are {{type}}</p>
+        </div>
+    </form>
+</div>
